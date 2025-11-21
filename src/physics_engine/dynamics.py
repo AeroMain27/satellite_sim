@@ -1,6 +1,6 @@
 import numpy as np
 
-from rotation_utils import quat_mult, quat_conj
+from .rotation_utils import quat_mult, quat_conj
 
 def compute_i_dot2_r_cm__i(f__i, m) -> np.ndarray:
     """

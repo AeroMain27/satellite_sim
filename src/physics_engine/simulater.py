@@ -1,11 +1,9 @@
 import numpy as np
 import pandas as pd
 
-import rk4
-import dynamics
-import rotation_utils
-import plotter
-
+from . import rk4
+from . import dynamics
+from . import rotation_utils
 
 def simulate(simulation_config) -> pd.DataFrame:
     num_steps = int(simulation_config["sim_duration"]/simulation_config["step_size"])
