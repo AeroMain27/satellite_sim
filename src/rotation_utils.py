@@ -78,9 +78,9 @@ def ypr_to_rotation_quaternion(ypr: np.ndarray) -> np.ndarray:
 
 def rotation_quaternion_to_dcm(q_a_to_b__a: np.ndarray) -> np.ndarray:
     """
-    Coverts a rotation quaternion (q_a_to_b__a) into a DCM (T_a_to_b)
+    Coverts a rotation quaternion (q_a_to_b__a/q_a_to_b__b) into a DCM (T_a_to_b)
     
-    :param rotation_quaternion: Rotation quaternion expressed in a-coordinates (q_a_to_b)
+    :param rotation_quaternion: Rotation quaternion expressed in a-coordinates/b-coordinates (q_a_to_b__a/q_a_to_b__b)
     :type rotation_quaternion: np.ndarray
     :return: The corresponding DCM (T_a_to_b)
     :rtype: ndarray
@@ -93,7 +93,7 @@ def rotation_quaternion_to_dcm(q_a_to_b__a: np.ndarray) -> np.ndarray:
         [2*(q_x*q_y - q_w*q_z), q_w**2 - q_x**2 + q_y**2 - q_z**2, 2*(q_w*q_x + q_y*q_z)],
         [2*(q_w*q_y + q_x*q_z), 2*(q_y*q_z - q_w*q_x), q_w**2 - q_x**2 - q_y**2 + q_z**2]
     ])
-
+    
     return T_a_to_b
 
 
